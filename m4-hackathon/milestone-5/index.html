@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>Shareable Resume</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--from here
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(45deg, #c799e2, #9a21be);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 3em;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>till here-->
+    
+        <style>
+            /* 1. Background Animation: Moving Gradient */
+            body {
+                margin: 0;
+                height: 100vh;
+                background: linear-gradient(45deg, #b537ce, #b026cc, #650383, #b404e9);
+                background-size: 400% 400%;
+                animation: gradientMove 8s ease infinite;
+            }
+    
+            @keyframes gradientMove {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+    
+            /* 2. Heading Styling */
+            h1 {
+                text-align: center;
+                color: white;
+                font-size: 3em;
+                margin-top: 3%;
+                font-family: 'Arial', sans-serif;
+                font-weight: bold;
+                position: relative;
+                animation: headingAnimation 2s ease-out forwards;
+            }
+    
+            /* 3. Heading Animation (3D Pop-In + Glow + Bounce) */
+            @keyframes headingAnimation {
+                0% {
+                    transform: scale(0) rotateX(90deg);
+                    opacity: 0;
+                }
+                50% {
+                    transform: scale(1.1) rotateX(0deg);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(1) rotateX(0deg);
+                    opacity: 1;
+                }
+            }
+    
+            /* 4. Glow Effect */
+            h1::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(159, 50, 223, 0.2);
+                filter: blur(8px);
+                animation: glowEffect 1.5s infinite alternate;
+            }
+    
+            @keyframes glowEffect {
+                0% {
+                    opacity: 0.4;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+    
+            /* 5. Optional: Text Shadow */
+            h1 {
+                text-shadow: 0 0 10px rgba(0, 0, 0, 0.8),
+                             0 0 20px rgba(0, 0, 0, 0.6),
+                             0 0 30px rgba(0, 0, 0, 0.4);
+            }
+    
+        </style>
+    <!--<style>
+        /* 1. Background Animation: Starry Night with Parallax Effect */
+        body {
+            margin: 0;
+            height: 100vh;
+            background: radial-gradient(circle, rgb(169, 74, 212) 0%, rgb(192, 10, 209) 100%);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Stars in the background */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stars.png');
+            opacity: 0.2;
+            animation: starryNight 50s linear infinite;
+            pointer-events: none; /* Disable interaction with stars */
+        }
+
+        /* Keyframes for the moving stars effect */
+        @keyframes starryNight {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(100px, 100px); }
+        }
+
+        /* 2. Heading Animation: Zoom In + Neon Glow */
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 5em;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            position: relative;
+            margin-top: 3%;
+            animation: zoomIn 3s ease-out forwards, glowNeon 1.5s ease-in-out infinite alternate;
+        }
+
+        /* 3. Zoom In Effect for the Heading */
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0) translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* 4. Neon Glow Effect for the Heading */
+        @keyframes glowNeon {
+            0% { text-shadow: 0 0 15px #ff4dff, 0 0 30px #ff4dff, 0 0 60px #ff4dff; }
+            100% { text-shadow: 0 0 15px #5c22a8, 0 0 30px #7c19bef8, 0 0 60px #7c0abe; }
+        }
+
+        /* 5. Optional: Text Shadow for extra glow */
+        h1 {
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
+                         0 0 20px rgba(255, 255, 255, 0.6),
+                         0 0 30px rgba(255, 255, 255, 0.4);
+        }
+    </style>-->
+
+
+    <div id="particles-js"></div>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<h1>Shareable Resume</h1>
+<form id="resume-form">
+    <fieldset>
+        <legend>Personal Information</legend>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter your username" required>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number" required>
+    </fieldset>
+
+    <fieldset>
+        <legend>Education</legend>
+        <label for="education">Education:</label>
+        <textarea id="education" placeholder="Enter your education" rows="4" required></textarea>
+    </fieldset>
+
+    <fieldset>
+        <legend>Experience</legend>
+        <label for="experience">Experience:</label>
+        <textarea id="experience" placeholder="Enter your work experience" rows="4" required></textarea>
+    </fieldset>
+
+    <fieldset>
+        <legend>Skills</legend>
+        <label for="skills">Skills:</label>
+        <textarea id="skills" placeholder="Enter your skills" rows="4" required></textarea>
+    </fieldset>
+<button type="submit"><b>Generate Resume</b></button>
+</form>
+<br>
+<!-- Editable RESUME -->
+<div id="resume-display" contenteditable="true">  
+</div>
+<br>
+<!-- section for the shareable link and download option -->
+ <div id="shareable-link-container" style="display: none;">
+    <h2>Shareable link</h2>
+    <p>Here is your link to view or edit your resume</p>
+    <a href="#" id="shareable-link" target="_blank"></a>
+    <br>
+    <button id="download-pdf"><b> Download as PDF</b></button>
+ </div>
+<script src="script.js"></script>
+
+</body>
+</html>
